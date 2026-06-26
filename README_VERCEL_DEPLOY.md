@@ -27,6 +27,14 @@ Or:
 MYSQL_URL=mysql://user:password@host:3306/database
 ```
 
+The app also supports common hosted MySQL variable names: `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD`, and `MYSQL_DATABASE`.
+
+If Vercel shows `Unable to connect to database`, check these three things first:
+
+1. The production database exists and the SQL dump has been imported.
+2. Vercel has the database variables set for the same environment you deployed to, usually Production.
+3. The database provider allows external connections from Vercel/serverless hosts.
+
 ## Deploy Commands
 
 ```bash

@@ -1,6 +1,24 @@
 <?php
+function ops_env_first($names, $default = '')
+{
+    foreach ($names as $name) {
+        $value = getenv($name);
+
+        if ($value !== false && $value !== '') {
+            return $value;
+        }
+    }
+
+    return $default;
+}
+
 $databaseUrl = getenv('MYSQL_URL') ?: getenv('DATABASE_URL');
-$hasEnvConfig = $databaseUrl || getenv('DB_SERVER') || getenv('DB_SERVER_USERNAME') || getenv('DB_SERVER_PASSWORD') || getenv('DB_DATABASE');
+$envHost = ops_env_first(array('DB_SERVER', 'MYSQL_HOST', 'MYSQLHOST'));
+$envPort = ops_env_first(array('DB_PORT', 'MYSQL_PORT', 'MYSQLPORT'));
+$envUser = ops_env_first(array('DB_SERVER_USERNAME', 'MYSQL_USER', 'MYSQLUSER', 'MYSQL_USERNAME'));
+$envPass = ops_env_first(array('DB_SERVER_PASSWORD', 'MYSQL_PASSWORD', 'MYSQLPASSWORD'));
+$envName = ops_env_first(array('DB_DATABASE', 'MYSQL_DATABASE', 'MYSQLDATABASE', 'MYSQL_DB'));
+$hasEnvConfig = $databaseUrl || $envHost || $envUser || $envPass || $envName;
 $localConfigFile = __DIR__ . '/configure.local.php';
 
 if ($databaseUrl && preg_match('/^mysql:\/\//i', $databaseUrl)) {
@@ -18,8 +36,8 @@ if ($databaseUrl && preg_match('/^mysql:\/\//i', $databaseUrl)) {
     define('DB_SERVER_PASSWORD', $localConfig['DB_SERVER_PASSWORD']);
     define('DB_DATABASE', $localConfig['DB_DATABASE']);
 } else {
-    define('DB_SERVER', getenv('DB_SERVER') ?: 'localhost');
-    define('DB_SERVER_USERNAME', getenv('DB_SERVER_USERNAME') ?: '');
-    define('DB_SERVER_PASSWORD', getenv('DB_SERVER_PASSWORD') ?: '');
-    define('DB_DATABASE', getenv('DB_DATABASE') ?: '');
+    define('DB_SERVER', $envHost . (($envHost && $envPort) ? ';port=' . $envPort : ''));
+    define('DB_SERVER_USERNAME', $envUser);
+    define('DB_SERVER_PASSWORD', $envPass);
+    define('DB_DATABASE', $envName);
 }

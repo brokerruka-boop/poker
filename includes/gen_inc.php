@@ -20,6 +20,12 @@ $pw      = DB_SERVER_PASSWORD;
 $db      = DB_DATABASE;
 $charset = 'utf8mb4';
 
+if ($host == '' || $ln == '' || $db == '')
+{
+    echo "Database environment variables are missing. Set DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, and DB_DATABASE in Vercel, or set MYSQL_URL.";
+    die();
+}
+
 try
 {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $ln, $pw, array(
@@ -30,7 +36,7 @@ try
 }
 catch (PDOException $e)
 {
-    echo "Unable to connect to database  - <a href='http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "install/'>Click here to install OPS V2</a>";
+    echo "Unable to connect to database. Check Vercel database environment variables, external MySQL host access, and that the SQL dump has been imported.";
     die();
 }
 

@@ -1,0 +1,11 @@
+.agents
+.codex
+.git
+backups
+exports
+react-poker
+runtime
+includes/configure.local.php
+*.zip
+*.sql
+*.log

@@ -1,0 +1,58 @@
+<tr>
+	<td>
+		<p class='topValue'> {$player.username}  
+		
+		<span style="margin-left: 5px; background: rebeccapurple; padding: 2px 4px; font-size: 10px; border-radius: 8px; color: #fff;"> 
+		
+		{$player.rank} </span></p>
+		<p class='bottomValue'>  {$player.mobile}</p>
+	</td>
+	
+
+
+
+<td>		
+		<div class="topValue">{$player.dans}</div>
+		<div class="bottomValue" style="margin-top: 5px; border-top: 1px solid #343a40; padding-top: 5px;">{$player.dansname}</div>
+</td>
+
+
+<td>		
+		<div class="topValue">Данс: {$player.winpot}</div>
+		<div class="bottomValue" style="margin-top: 5px; border-top: 1px solid #343a40; padding-top: 5px;">Сэйф: {$player.sefdvn}</div>
+</td>
+
+
+	<td>{$player.ban <!-- html/parts/admin-members-row-(ban|unban).html -->}</td>
+
+	
+	
+<td>		
+		<div class="topValue" style="display: flex; justify-content: space-evenly;">
+		<a href="admin.php?admin=edit-member&username={$player.username}" class="v-button">
+		
+			<img src='{$theme.url}/images/view.png'>
+		</a>
+		<a href="admin.php?admin=edit-member&username={$player.username}" class="ac-button">
+		
+					<img src='{$theme.url}/images/action.png'>
+					
+					</a>
+	{$player.delete <!-- html/parts/admin-members-row-delete.html -->}
+	
+	
+	
+		
+		</div>
+		<div class="bottomValue" style="margin-top: 5px; border-top: 1px solid #343a40; padding-top: 5px;">
+		
+		
+		{$player.approval <!-- html/parts/admin-members-row-(approve|active).html -->}
+		
+		
+		</div>
+</td>
+	
+	
+	
+</tr>

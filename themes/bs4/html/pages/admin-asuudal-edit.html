@@ -1,0 +1,41 @@
+<style>
+	@media (max-width: 657px){
+	.nav-pills{
+	display: none;
+	}
+	
+	.list-group{display: none;}
+	}
+	.dans{
+	background: #0a7c584f;
+	width: fit-content;
+	padding: 5px 15px;
+	border-radius: 2px;
+	color: #fff;
+	border: 1px solid #0a7c58;
+	}
+	#footer{
+		display: none;
+	}
+</style>
+<ul class="nav nav-tabs" role="tablist">
+	
+	<li role="presentation" class="nav-item">
+		<a class="nav-link active" href="#">{$asuudal.asuudaltxt} </a>
+	</li>	
+</ul>
+
+		
+		
+		
+
+<form name="editasuudal" method="post" action="admin.php">
+			<input type="hidden" name="asuudalID" value="{$asuudal.ID}">
+			<input type="hidden" name="action" value="asuudalhariu">
+			Хариу илгээх:<br>
+			<div style='display: flex;'>
+				<input type="text" name="asuudalhariu" class="form-control" size="60" maxlength="60" >  
+				<button type="submit" class="btn btn-success" style='margin-left: 10px;'>Илгээх</button>
+			</div>
+</form>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>{$title}</title>
+		<!-- Latest compiled and minified CSS -->
+		{$styles}
+		<!-- Latest compiled and minified JavaScript -->
+		{$scripts.header}
+	</head>
+	<body>
+	
+	<nav id="head-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container ">
+		
+			<img src='bigblind.png' alt='{$site_title} ' title='{$site_title}' style='width:100px;height:auto;position:absolute;top:-20px;'>
+		<span style="color: #c20505;">.</span>
+			{$admin_nav <!-- html/parts/admin-nav.html -->}
+			<div class="collapse navbar-collapse" id="adminnav">
+				<ul class="navbar-nav ml-auto">
+					{$nav_content <!-- html/parts/nav-each.html -->}
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	
+
+<script type="text/javascript">
+jQuery(".navbar-nav li.nav-item:nth-child(2) a").append("{$asuudalcount}");
+jQuery(".navbar-nav li.nav-item:nth-child(3) a").append("{$tsenegleltcount}");
+jQuery(".navbar-nav li.nav-item:nth-child(4) a").append("{$tataltcount}");
+jQuery(".navbar-nav li.nav-item:nth-child(5) a").append("{$htmlMember}");
+</script>
+
+<style>	
+	.navbar-nav li.nav-item span{
+		color: #212529;
+		background: white;
+		border-radius: 8px;
+		padding: 1px 6px;
+		margin-top: -10px;
+		position: absolute;
+		font-weight: 600;
+	}
+</style>

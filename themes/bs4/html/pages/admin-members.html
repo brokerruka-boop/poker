@@ -1,0 +1,65 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	
+	
+	<style>
+
+	.btn-search:hover {
+    color: #212529;
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+	.btn-search {
+    color: #ffffff;
+    background-color: #212529;
+    border-color: #424344;
+    padding: 6px 20px;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-top: -3px;
+}
+.v-button{	height: 25px;
+    width: 25px;
+
+}
+.ac-button{	height: 25px;
+    width: 25px;
+    background: url("{$theme.url}/images/action.png");
+    background-size: cover;
+}
+.d-button{	height: 25px;
+    width: 25px;
+    background: url("{$theme.url}/images/delete.png");
+    background-size: cover;
+}
+</style>
+    <form name="windowEvent" id='admin' action='admin.php?admin=edit-member&'>  
+        <input value='edit-member' type="hidden" name="admin"/>  
+        <input placeholder='Тоглогчын нэр' class='username' type="text" name="username"/>  
+         <input type="button" class='btn btn-search btn-sm' value="ПРОФАЙЛ НЭЭХ" name="btnOpenPopup" onClick="OpenNewWindow(username.value)" />  
+      </form>  
+	
+     <script type="text/javascript">  
+         function OpenNewWindow(MyPath)  
+         {  
+            window.open("admin.php?admin=edit-member&username="+MyPath,"","toolbar=no,status=no,menubar=no,location=center,scrollbars=no,resizable=no,height=620,width=590");  
+			
+			}  
+      </script>  
+</ul>
+
+
+
+<div id="members-content" class="tab-content">
+	{$members.tabpanels}
+</div>
+
+<script type="text/javascript">
+	var activetab = 'members';
+
+	if ('{$get.tab}' !== '')
+		activetab = '{$get.tab}';
+
+	jQuery("a.nav-link[aria-controls='" + activetab + "']").addClass("active");
+	jQuery("#" + activetab).addClass("active");
+</script>

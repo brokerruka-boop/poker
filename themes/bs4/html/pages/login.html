@@ -1,0 +1,33 @@
+<div class="container pt-4">
+	<div class="row">
+		<div class="col-md-12" align="center">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					{$login_message <!-- html/parts/login-message.html -->}
+					<form action="login.php" method="post" name="login">
+						<input placeholder="Тоглогчын нэр" type="text" size="12" maxlength="10" name="usr" class="form-control" />
+						<input type="hidden" name="action" value="process">
+						<input placeholder="Нууц үг" type="password" size="12" maxlength="10" name="pwd" class="form-control" />
+						<input type="submit" name="Login" value="Нэвтрэх" class="btn btn-success btn-block">
+					</form>
+					<a href="create.php" target="_self" class="btn btn-warning btn-block">Бүртгүүлэх</a><br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	input{
+	margin-bottom: 8px;
+	}
+</style>
+<script type="text/javascript">
+	var fp_success = '{$fp_success}';
+	var fp_error   = '{$fp_error}';
+	
+	if (fp_success !== '')
+		alert(fp_success);
+	
+	if (fp_error !== '')
+		alert(fp_error);
+</script>

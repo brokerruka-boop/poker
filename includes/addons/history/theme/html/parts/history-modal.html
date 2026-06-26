@@ -1,0 +1,186 @@
+<style>
+	.poker__table-card-num {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+.poker__table-card-mast {
+  text-align: center;
+}
+.poker__table-card-mast span {
+  font-size: 25px;
+}
+
+@media (max-width: 99999px) {
+  .poker__table-card {
+    background-color: white;
+    width: 46px;
+    height: 56px;
+  }
+  .poker__table-card-mast span {
+    font-size: 22px;
+  }
+  .poker__table-card-num {
+    margin-bottom: 3px;
+  }
+}
+@media (max-width: 1030px) {
+  .poker__table-card {
+    background-color: white;
+    width: 37px;
+    height: 48px;
+  }
+  .poker__table-card {
+    padding: 1px 4px;
+  }
+  .poker__table-card-num {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 3px;
+  }
+  .poker__table-card-mast span {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .poker__table-card {
+    background-color: white;
+    border-radius: 2px;
+    width: 30px;
+    height: 38px;
+  }
+  .poker__table-card-num {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .poker__table-card-mast span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 850px) and (min-width: 580px) and (orientation: landscape) {
+  .poker__table-card {
+    background-color: white;
+    width: 32px;
+    height: 40px;
+  }
+  .poker__table-card-num {
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .poker__table-card-mast span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) and (min-width: 580px) and (orientation: landscape) {
+  .poker__table-card {
+    background-color: white;
+    width: 27px;
+    height: 33px;
+  }
+  .poker__table-card-mast span {
+    font-size: 13px;
+  }
+  .poker__table-card-num {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 700px) and (min-width: 580px) and (orientation: landscape) {
+  .poker__table-card-num {
+    font-size: 13px;
+  }
+}
+@media (max-width: 645px) and (min-width: 580px) and (orientation: landscape) {
+  .poker__table-card {
+    background-color: white;
+    width: 24px;
+    height: 30px;
+  }
+  .poker__table-card {
+    padding: 0 3px;
+  }
+  .poker__table-card-num {
+    font-size: 12px;
+  }
+  .poker__table-card-mast span {
+    font-size: 11px;
+    margin-top: -2px;
+  }
+}
+@media (max-width: 480px) {
+  .poker__table-card {
+    background-color: white;
+    width: 26px;
+    height: 34px;
+  }
+  .poker__table-card-mast span {
+    font-size: 14px;
+  }
+  .poker__table-card-num {
+    margin-bottom: 1px;
+  }
+}
+.mainText{
+
+color: #fff;
+font-size: 14px;}
+</style>
+<div class="modal fade" id="handdetails{$history.id}" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content" style="background: #001e3c !important;">
+		
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6 mainText">
+						<b>
+						№ {$history.id}<br>
+						{$history.tablename}<br>
+						Total Pot : {$history.potmoney}</b>
+					</div>
+
+					<div class="col-md-6 mainText">
+						{$history.date}
+					</div>
+				</div>
+
+				<br>
+
+				<div class="alert alert-success" role="alert">
+					<b>{$history.msg}</b>
+				</div>
+
+				<p class='mainText'>
+				Газрын мод</p>
+
+					<div class="row justify-content-center" style="flex-flow: nowrap;color: black;">
+						<div class="col-md-2" >{$history.card1}</div>
+						<div class="col-md-2">{$history.card2}</div>
+						<div class="col-md-2">{$history.card3}</div>
+						<div class="col-md-2">{$history.card4}</div>
+						<div class="col-md-2">{$history.card5}</div>
+					</div>
+
+				</p>
+
+				<div class="table-responsive">
+					<table class="table table-hover" style="font-size:12px;">
+						<thead>
+							<th>Гарт</th>
+							<th>Нэр</th>
+							<th>Гарын үлдэгдэл</th>
+							<th>Өсгөсөн</th>
+						</thead>
+
+						{$history.hands <!-- html/parts/history-hands.html -->}
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning btn-block" data-dismiss="modal">Close</button> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

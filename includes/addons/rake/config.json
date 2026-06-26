@@ -1,0 +1,50 @@
+[
+	{
+		"label": "Commission Percentage",
+		"tag": "input",
+		"type": "number",
+		"min": 0,
+		"max": 100,
+		"name": "commission_percentage",
+		"placeholder": "Percentage of commission",
+		"hint": "% that the commissioner will receive"
+	},
+	{
+		"label": "Commission Cap",
+		"tag": "input",
+		"type": "number",
+		"min": 0,
+		"max": 1000000,
+		"name": "commission_cap",
+		"placeholder": "Commission cap",
+		"hint": "Maximum rake that can be generated from each game"
+	},
+	{
+		"label": "Commissioner",
+		"tag": "input",
+		"type": "text",
+		"name": "commissioner_user",
+		"placeholder": "Name of the user who will receive commission",
+		"hint": "Username of the player who will receive commission"
+	},
+	{
+		"label": "Deduct Commission after",
+		"tag": "select",
+		"options": {
+		    "no": "Player leaves the table",
+		    "yes": "Each hand"
+		},
+		"name": "commission_eachhand",
+		"hint": "When should rake be generated"
+	},
+	{
+		"label": "Rake Type",
+		"tag": "select",
+		"options": {
+		    "global": "Global",
+		    "table": "Per table"
+		},
+		"name": "rake_type",
+		"hint": "Whether these settings should apply globally or tables will have their individual rake settings"
+	}
+]

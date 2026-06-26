@@ -1,0 +1,126 @@
+<div class="container pt-4">
+	<div class="row">
+		<div class="col-md-3">
+			{$sidebar <!-- html/pages/sidebar.html -->}
+		</div>
+		<div class="col-md-9">
+			<br>
+			{$message <!-- html/parts/myplayer-message.html -->}
+			<div class="tab">
+				<button class="tablinks" onclick="openCity(event, 'View')">Илгээсэн асуудалууд</button>
+				<button class="tablinks" onclick="openCity(event, 'Add')">Асуудал илгээх</button>
+			</div>
+			<div id="View" class="tabcontent">
+				{$html}
+			</div>
+			<div id="Add" class="tabcontent">
+				<p style="padding: 5px; font-size: 14px;">
+					Тань ямар нэгэн асуудал тулгарсан бол бичиж үлдээнэ үү?
+					Танд байгаа асуудлын талаар та хүсэлт илгээж хялбар шийдүүлээрэй.<br>
+					Жишээ нь:
+				</p>
+				<ul style="padding: 5px; font-size: 14px; margin-left: 20px;">
+					<li><span style="color: red">- </span> Таталт хийсэн дутуу орсон байна.</li>
+					<li><span style="color: red">- </span> Цэнэглэлт орохгүй байна.</li>
+					<li><span style="color: red">- </span> Гүйлгээний утга аа буруу явуулсан байна.</li>
+					<li><span style="color: red">- </span> Цэнэглэлт татгалзаад байна. Би 2021/01/30 10:40мин д хийсэн</li>
+				</ul>
+				гэх мэтээр асуудлаа тодорхой бичээд илгээвэл бид маш 
+				хурдан шуурхай шийдэж өгөх болно. 
+				<form method="post" name="form">
+					<input type="hidden" name="action" value="asuudal">
+					<input style="    background: white;
+						padding: 5px;
+						border-radius: 5px;
+						height: 40px;
+						width: 80%;
+						display: block;
+						margin-bottom: 10px;" placeholder="Бичих" type="text" name="asuudaltxt" id="" required="required" >
+					<button type="submit" name="ilgeeh" class="btn btn-success btn-sm"> Илгээх </button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<style>
+		/* Style the tab */
+		.tab {
+		overflow: hidden;
+		}
+		.tab button {
+		background-color: inherit;
+		float: left;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+		padding: 8px 14px;
+		transition: .3s;
+		background-color: #212529;
+		color: #fff;
+		border-bottom: 1px solid #0a7c58;
+		text-transform: uppercase;
+		font-size: 12px;
+		}
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		background-color: #0a7c58;
+		color: #fff;
+		}
+		/* Create an active/current tablink class */
+		.tab button.active {
+		background-color: #0a7c58;
+		color: #fff;
+		}
+		.tabcontent {
+		display: none;
+		padding: 10px;
+		background: #212529;
+		border-top: none;
+		border-radius: 4px;
+		}
+		.tabcontent {
+		animation: fadeEffect 1s; /* Fading effect takes 1 second */
+		}
+		@keyframes fadeEffect {
+		from {opacity: 0;}
+		to {opacity: 1;}
+		}
+		.hariu{
+		display: table;
+		background: #212529;
+		margin-left: 20%; 
+		border-radius: 4px; 
+		border-bottom: 2px solid #28a745;
+		padding: 0px 20px;
+		}
+	</style>
+	<script>
+		function openCity(evt, cityName) {
+		// Declare all variables
+		var i, tabcontent, tablinks;
+		
+		// Get all elements with class="tabcontent" and hide them
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+		 tabcontent[i].style.display = "none";
+		}
+		
+		// Get all elements with class="tablinks" and remove the class "active"
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+		 tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		
+		// Show the current tab, and add an "active" class to the button that opened the tab
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+		}
+	</script>
+</div>
+</div>
+</div>
+<script>
+	if (is_logged == 1)
+	{
+		jQuery(".asuudal").addClass('active');
+	}
+</script>

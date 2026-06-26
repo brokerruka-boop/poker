@@ -1,0 +1,41 @@
+<div class="container pt-4">
+	<div class="row">
+		<div class="col-md-12">
+			{$message <!-- html/parts/register-message.html -->}
+			<div class="row" align="center" style="margin: 0 auto;">
+				<div class="col-md-6 offset-md-3">
+					<form name="createplyr" action="create.php" method="post">
+						<input type="hidden" name="av" id="av" value="">
+						<input type="hidden" name="action" value="createplayer">
+						<input style="text-transform: lowercase;" placeholder="{$create_player_name_label}" type="text" size="12" maxlength="10" name="user" class="form-control" value="{$create_player_name}" />
+						<input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Утасны дугаар" type="number" size="12" class="form-control" maxlength="12" name="mobile" value="{$create_player_mobile}" />
+						<input placeholder="Дансны дугаар" type="number" class="form-control" name="dans"
+							value="{$create_player_dans}" />
+						<input placeholder="Данс эзэмшигчийн нэр" type="text" class="form-control" name="dansname"
+							value="{$create_player_dansname}" />
+							<input placeholder="Банк нэр" type="text" class="form-control" name="bankname"
+							value="{$create_player_bankname}" />
+						<div class="alert alert-warning" role="alert" style='margin-bottom: 8px;'>
+							<span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+							<span class="alert-inner--text"><strong>Санамж!</strong> Таны мөнгө таталт бүртгэлтэй
+							данс руу орох болно. Мөн солих боломжгүй учир дансны мэдээллээ үнэн зөв бүрэн
+							бөглөнө үү.</span>
+						</div>
+						<input placeholder="{$create_player_password_label} {$create_player_password_charlimit}" type="password" size="12" maxlength="10" name="password" class="form-control" />
+						<input placeholder="{$create_player_password_confirm_label} {$create_player_password_charlimit}" type="password" size="12" maxlength="10" name="password2" class="form-control" />
+						{$email_input <!-- html/parts/register-email-input.html -->}
+						{$inputs.more}
+						<input type="submit" name="Submit2" value="Бүртгүүлэх" class="btn btn-success btn-block">
+					</form>
+					<a href="login.php" target="_self" class="btn btn-warning btn-block">Нэвтрэх</a><br>
+				</div>
+				<div class="col-centered col-md-4"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	input{
+	margin-bottom: 8px;
+	}
+</style>

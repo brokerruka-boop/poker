@@ -1,0 +1,354 @@
+<script>
+
+	if (is_logged == 1)
+	{
+		jQuery(".myplayer").addClass('active');
+	} 
+
+</script>
+
+<div class="container pt-4">
+	<div class="row">
+		
+		<div class="col-md-3">
+			{$sidebar <!-- html/pages/sidebar.html -->}
+		</div>
+
+		<div class="col-md-9">
+
+
+<div class="row">
+	<div class="col-md-12">
+	
+	
+			{$message <!-- html/parts/myplayer-message.html -->}
+			
+			
+		<div class="alert alert-info" style='font-size: 14px;'>
+			<strong>Мэдээлэл:</strong>
+			<p>
+				<strong>{$DANSNIIDUGAA}, {$DANSIINER} </strong> 
+				нэртэй дансанд гүйлгээний утган дээр <strong>{$user_name}</strong>
+				нэрээ бичиж цэнэглэх дүнгээ шилжүүлнэ.
+			</p>
+			<p>{$zar}</p>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card mb-4">
+			<div class="card-body p-4">
+				<div class="d-flex align-items-center">
+					
+						<div class="mr-4">
+							<i class="fa fa-wallet fa-4x text-success"></i>
+						</div>
+						<div>
+							<div class="small">Таны дансны үлдэгдэл:</div>
+							<h4 class="m-0 text-white">{$user_winnings} </h4>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card mb-4">
+			<div class="card-body p-4">
+				<div class="d-flex align-items-center">					
+						<div class="mr-4">
+							<i class="fa fa-wallet fa-4x text-success"></i>
+						</div>
+						<div>
+							<div class="small">Сэйфний үлдэгдэл:</div>
+							<h4 class="m-0 text-white">{$user_sefdvn}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+	
+		<div class="row">
+
+			<div class="col-md-12">
+			
+					<div class="card mb-4">
+			
+			<div class="row" style="padding: 20px;">
+			<div class="col-md-3">
+				
+						<style>
+			.file-upload {
+			display: none;
+			}
+			.circle {
+			border-radius: 1000px!important;
+			overflow: hidden;
+			width: 110px;
+			height: 110px;
+			border: 4px solid #0a7c5880!important;
+			}
+			.circle  img.profile-pic{
+			width: 110px;
+			height: 110px;
+			}
+			.p-image {
+			position: absolute;
+			    top: 38%;
+    left: 40%;
+			color: #fff;
+			transition: all .3s cubic-bezier(.175,.885,.32,1.275);
+			background: #174d3e;
+			padding: 4px 0px 2px 4px;
+			border-radius: 110px;
+			}
+			.p-image:hover {
+			transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+			}
+			.upload-button {
+			font-size: 1.2em;
+			width: 30px; height: 30px;
+			}
+			.upload-button:hover {
+			transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+			color: #999;
+			}
+			.hadgalah{
+    position: absolute;
+    top: 74%;
+    left: 5%;
+    padding: 8px;
+    border-radius: 8px;
+    color: #fff;
+    width: 70%;
+    background: #0a7c58;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 0;
+			}
+			.hadgalah:hover{
+			background: #1f4237;
+			}
+		</style>
+					<div class="circle">
+						<img alt="{$user_name}" class="profile-pic " src="{$user_avatar}"> 
+					</div>
+					<form action="myplayer.php" enctype="multipart/form-data" method="post" name="chngava">
+						<input name="update" type="hidden" id="action" value="image">
+						<div class="p-image">
+							<img src="{$theme.url}/images/pic.png" class="upload-button">
+							<input name="uploadedfile"  type="file" class="file-upload" accept="image/*" size="40">
+						</div>
+						<button class="hadgalah" type="submit">Зураг оруулах</button>
+					</form>
+					<script>	
+						$(document).ready(function() {
+						    $(".upload-button").on('click', function() {
+						       $(".file-upload").click();
+						    });
+						});
+					</script>
+					
+					
+				</div>
+		
+		
+		
+		
+		<div class="col-md-4" style='font-size: 14px;'>
+		<div class="">{$user_name} </div>
+		<div class="">{$user_dansname} </div>
+		
+			<!--<div class=""> Хаанбанк</div>-->
+			<div class="t">{$user_dansname}</div>
+			<div class="t">{$user_mobile}</div>
+		</div>
+		<div class="col-md-4" style='font-size: 14px;'>
+			<div class=""> Сүүлд нэвтэрсэн: {$lastlogin}</div>
+			<div class=""> Бүртгүүлсэн: {$stats_joined}</div>
+							<!--			<div class=""> {$stats_tournaments_played_label} {$stats_tournaments_played}</div>-->
+							<!--<div class=""> {$stats_joined_label} {$stats_joined}</div>-->
+							<!--<div class=""> {$stats_tournaments_won_label} {$stats_tournaments_won}</div>-->
+		</div>
+				
+				
+							
+				
+				
+				
+				
+				
+		</div>						
+		</div>						
+		</div>						
+		</div>						
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="row">
+		<div class="col-md-6">
+			<div class="form-control-label" style="">
+				Данс цэнэглэх хүсэлт
+			</div>
+			<div class="form-body">
+				<p class='info'>Хамгийн багадаа 5000₮-р цэнэглэнэ.</p>
+				<form method="post" name="form1">
+					<div class="input-group mb-4">
+						<input type="hidden" name="action" value="updatetsenegleh">
+						<input class="inputv" type="number" min="5000" size="15" maxlength="15" name="tsdvn" id="tsdvn" required="required" placeholder="Цэнэглэх дүн">
+					</div>
+					<div class="input-group-append">
+						<button type="submit" name="tsenegleh" class="btn btn-primary btn-sm">Цэнэглэх</button>
+						<a href="tseneglelt.php" class="btn btn-success btn-sm">Шалгах</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-6" >
+			<div class="form-control-label" style="background: #158a65;">Мөнгө татах хүсэлт
+			</div>
+			<div class="form-body" style='background: #0a7c58;'>
+				<p class='info'>
+				Хамгийн багадаа 10,000₮ татах боломжтой.
+				</p>
+				<form method="post" name="form2">
+					<div class="input-group mb-4">
+						<input type="hidden" name="action" value="updatehuselt">
+						<input type="number" min="10000" size="7" maxlength="7" name="hdvn" id="Hdvn" required="required" class="inputv" placeholder="Татах дүн">
+					</div>
+					<div class="input-group-append">
+						<button type="submit" name="tatah" class="btn btn-success btn-sm"> Татах </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-control-label" style="">Сейфэнд хийх
+			</div>
+			<div class="form-body">
+				<form method="post" name="form3">
+					<div class="input-group mb-4">
+						<input type="hidden" name="action" value="sefhuselt">
+						<input type="number" name="chrgsafe" id="Chrgsafe" class="form-control " placeholder="Сейфлэх дүн" required="required">
+					</div>
+					<div class="input-group-append">
+						<button type="submit" class="btn btn-sm   btn-primary"> Сэйфлэх</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-control-label" style="">Сейфнээс
+				авах
+			</div>
+			<div class="form-body">
+				<form method="post" name="form4">
+					<div class="input-group mb-4">
+						<input type="hidden" name="action" value="sefawah">
+						<input type="number" name="awah" id="Awah" class="form-control " placeholder="Сейфнээс авах дүн" required="required">
+					</div>
+					<div class="input-group-append">
+						<button type="submit" class="btn  btn-sm  btn-primary"> Сэйфнээс авах</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				{$tablist <!-- html/parts/myplayer-tab*.html -->}
+			</ul>
+
+			
+			<!-- Tab panes -->
+			<div class="tab-content">
+				{$panels <!-- html/parts/myplayer-panel-*.html -->}
+			</div>
+		</div>	
+				
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<style>
+.fa{
+font-size: 40px;
+}
+
+
+.form-body{
+	background: #212529;
+	padding: 20px;
+	margin-bottom: 20px;
+	}
+	.form-control-label{
+	background: #191b1d;
+	padding: 8px 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+	}
+	.form-body p.info{
+	color: #d4d422;
+	font-size: 14px;
+	margin: 5px 0px 5px;
+	}	
+	input.inputv{
+	display: block;
+	width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #0a7c58;
+	background-color: #fff;
+	background-clip: padding-box;
+	border:none;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	}
+	.btn-primary{
+	background: #0a7c58;
+	border: none;
+	margin-right: 5px;
+	}
+	
+	
+</style>
+
+
+
+<script>
+	function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+</script>

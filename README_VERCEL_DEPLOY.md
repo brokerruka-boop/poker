@@ -4,7 +4,7 @@ This legacy PHP poker app can be deployed to Vercel only through a PHP custom ru
 
 ## Included Vercel Files
 
-- `vercel.json` routes all dynamic requests to `api/index.php`.
+- `vercel.json` uses `vercel-php@0.9.0` and routes all dynamic requests to `api/index.php`.
 - `api/index.php` emulates the local router for page routes such as `/login.php` and direct PHP endpoints such as `/includes/live_games.php`.
 - `.env.example` lists the required production database variables.
 - `.vercelignore` excludes local runtime binaries, DB dumps, exports, and the React experiment folder.
